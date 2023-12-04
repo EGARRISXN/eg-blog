@@ -3,4 +3,4 @@ export { default } from 'next-auth/middleware';
 
 //! This applies next-auth ONLY to matching routes.
 // Doc: https://next-auth.js.org/docs/app/building-your-application/routing/middleware
-export const config = { matcher: ['/login', '/dashboard'] };
+export const config = { matcher: ['/dashboard'] };

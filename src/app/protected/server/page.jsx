@@ -8,7 +8,6 @@ export default async function ProtectedServerPage() {
 
   if (!session) {
     redirect('/api/auth/signin?callbackUrl=/protected/server');
-    return null; // Return early to avoid rendering the page
   }
 
   return (
@@ -16,7 +15,7 @@ export default async function ProtectedServerPage() {
       <h1 className='text-center text-3xl font-bold'>
         This is a server-side protected page.
       </h1>
-      <UserCard user={session.user} pagetype={'Server'} />
+      <UserCard user={session?.user} pagetype={'Server'} />
     </section>
   );
 }

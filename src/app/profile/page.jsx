@@ -6,13 +6,13 @@ export default async function Profile() {
   const session = await getServerSession(authOptions);
 
   return (
-    <>
+    <div>
       {session ? (
         <UserCard user={session?.user} pagetype={'Profile'} />
       ) : (
         <h1 className='text-3xl'>You must login to access your Profile.</h1>
       )}
-    </>
+    </div>
   );
 }
 
