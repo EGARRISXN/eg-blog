@@ -11,12 +11,13 @@ function Card({ user, pagetype }) {
   const userImage =
     user && user.image ? (
       <Image
-        className='mx-auto mt-8 rounded-full border-4 border-black shadow-black drop-shadow-xl dark:border-slate-500'
+        className='mx-auto mt-8 rounded-full border-4 border-black shadow-black drop-shadow-xl'
         src={user.image}
-        width={200}
-        height={200}
         alt={user.name || 'Profile Pic'}
-        priority={true}
+        width={100}
+        height={100}
+        quality={100}
+        priority
       />
     ) : null;
 

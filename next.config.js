@@ -4,15 +4,14 @@ const withMDX = require('@next/mdx')();
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
   images: {
-    domains: ['github.com', 'lh3.googleusercontent.com'],
-    // remotePatterns: [
-    //   {
-    //     protocol: 'https',
-    //     hostname: 'avatars.githubusercontent.com',
-    //     port: '',
-    //     pathname: '/u/**',
-    //   },
-    // ],
+    domains: [
+      'avatars.githubusercontent.com',
+      'lh3.googleusercontent.com',
+      'api.twitter.com',
+      'cdn.discordapp.com',
+      'id.twitch.tv',
+      'static-cdn.jtvnw.net',
+    ],
   },
 };
 

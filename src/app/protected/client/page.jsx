@@ -17,7 +17,7 @@ export default function ProtectedClientPage() {
       <h1 className='text-center text-3xl font-bold'>
         This is a client-side protected page.
       </h1>
-      <UserCard user={session && session.user} pagetype={'Client'} />
+      <UserCard user={session.user} pagetype={'Client'} />
     </section>
   );
 }

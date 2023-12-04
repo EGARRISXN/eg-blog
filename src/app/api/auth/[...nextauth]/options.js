@@ -1,9 +1,38 @@
-import CredentialsProvider from 'next-auth/providers/credentials';
 import GoogleProvider from 'next-auth/providers/google';
-import Github from 'next-auth/providers/github';
+import TwitterProvider from 'next-auth/providers/twitter';
+import DiscordProvider from 'next-auth/providers/discord';
+import TwitchProvider from 'next-auth/providers/twitch';
+import GithubProvider from 'next-auth/providers/github';
+import CredentialsProvider from 'next-auth/providers/credentials';
 
 export const authOptions = {
   providers: [
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    }),
+
+    TwitterProvider({
+      clientId: process.env.TWITTER_CLIENT_ID,
+      clientSecret: process.env.TWITTER_CLIENT_SECRET,
+      version: '2.0',
+    }),
+
+    DiscordProvider({
+      clientId: process.env.DISCORD_CLIENT_ID,
+      clientSecret: process.env.DISCORD_CLIENT_SECRET,
+    }),
+
+    TwitchProvider({
+      clientId: process.env.TWITCH_CLIENT_ID,
+      clientSecret: process.env.TWITCH_CLIENT_SECRET,
+    }),
+
+    GithubProvider({
+      clientId: process.env.GITHUB_CLIENT_ID,
+      clientSecret: process.env.GITHUB_CLIENT_SECRET,
+    }),
+
     CredentialsProvider({
       name: 'Credentials',
       credentials: {
@@ -30,17 +59,8 @@ export const authOptions = {
         }
       },
     }),
-
-    GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    }),
-
-    Github({
-      clientId: process.env.GITHUB_CLIENT_ID,
-      clientSecret: process.env.GITHUB_CLIENT_SECRET,
-    }),
   ],
+
   //! This is the default callback URL with Nextjs. Will change later.
   // pages: {
   //   signIn: '/auth/signin',

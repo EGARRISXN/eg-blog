@@ -2,7 +2,6 @@ import { authOptions } from '@/app/api/auth/[...nextauth]/options';
 import { getServerSession } from 'next-auth/next';
 import { redirect } from 'next/navigation';
 import UserCard from '@/components/UserCard';
-import { BsTypeH1 } from 'react-icons/bs';
 
 export default async function ProtectedServerPage() {
   const session = await getServerSession(authOptions);
@@ -17,7 +16,7 @@ export default async function ProtectedServerPage() {
       <h1 className='text-center text-3xl font-bold'>
         This is a server-side protected page.
       </h1>
-      <UserCard user={session && session.user} pagetype={'Server'} />
+      <UserCard user={session.user} pagetype={'Server'} />
     </section>
   );
 }

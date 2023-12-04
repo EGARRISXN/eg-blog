@@ -1,7 +1,4 @@
-export default function Login() {
-  return (
-    <div>
-      <h1>Login</h1>
-    </div>
-  );
+//! Will create this page later
+export default async function Login() {
+  return <h1>Login</h1>;
 }
