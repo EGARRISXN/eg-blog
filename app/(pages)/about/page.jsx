@@ -1,7 +1,9 @@
 export default function About() {
   return (
-    <div className='x'>
-      <h1>About</h1>
-    </div>
+    <section className='py-24'>
+      <div className='container'>
+        <h1 className='text-2xl font-bold'>About</h1>
+      </div>
+    </section>
   );
 }

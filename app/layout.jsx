@@ -1,10 +1,11 @@
-import './globals.css';
+import { ThemeProvider } from '@/app/(utils)/context/ThemeContext';
+import ClientThemeWrapper from '@/app/(utils)/context/ClientThemeWrapper';
+import AuthProvider from '@/app/(utils)/context/AuthProvider';
+import NavBar from '@/app/(components)//NavBar';
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
-import { ThemeProvider } from '@/app/(utils)/ThemeContext';
-import ClientThemeWrapper from '@/app/(utils)/ClientThemeWrapper';
-import AuthProvider from '@/app/(utils)/AuthProvider';
-import NavBar from '@/app/(components)//NavBar';
+import 'react-toastify/dist/ReactToastify.css';
+import './globals.css';
 
 export const metadata = {
   title: 'eg-blog',
@@ -16,7 +17,7 @@ export default async function RootLayout({ children }) {
   return (
     <html
       lang='en'
-      className={`${GeistSans.variable} ${GeistMono.variable} scroll-smooth antialiased`}
+      className={`${GeistSans.variable} ${GeistMono.variable} h-full scroll-smooth antialiased`}
     >
       <head>
         <meta
@@ -24,14 +25,12 @@ export default async function RootLayout({ children }) {
           content='R4fSOIUhVxnQljOM1CHX58douELz931g6fPpZJ3Usyo'
         />
       </head>
-      <body>
+      <body className='flex min-h-full flex-col'>
         <ThemeProvider>
           <ClientThemeWrapper>
             <AuthProvider>
-              <main className='min-h-screen'>
-                <NavBar />
-                {children}
-              </main>
+              <NavBar />
+              <main className='min-h-screen grow'>{children}</main>
             </AuthProvider>
           </ClientThemeWrapper>
         </ThemeProvider>

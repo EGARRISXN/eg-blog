@@ -1,6 +1,6 @@
 'use client';
 import { useContext } from 'react';
-import { ThemeContext } from '@/app/(utils)/ThemeContext';
+import { ThemeContext } from '@/app/(utils)/context/ThemeContext';
 import { themeIcons } from '@/app/(utils)/constants';
 
 export default function ThemeOptions() {

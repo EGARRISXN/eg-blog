@@ -2,7 +2,7 @@
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
-export default function UserForm() {
+export default function CreateUserForm() {
   const router = useRouter();
   const [formData, setFormData] = useState({
     name: '',
@@ -23,7 +23,7 @@ export default function UserForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrorMessage('');
-    const res = await fetch('/api/Users', {
+    const res = await fetch('/api/users', {
       method: 'POST',
       body: JSON.stringify({ formData }),
       'Content-Type': 'application/json',

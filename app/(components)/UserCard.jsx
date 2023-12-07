@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 export default function Card({ user, pagetype }) {
-  const userName = user && user.name ? <>{user.name}</> : null;
+  const userName = user && user.name ? <div>{user.name}</div> : null;
 
   const userImage =
     user && user.image ? (
@@ -12,7 +12,6 @@ export default function Card({ user, pagetype }) {
         width={80}
         height={80}
         quality={100}
-        priority
       />
     ) : null;
 

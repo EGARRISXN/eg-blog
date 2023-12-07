@@ -1,6 +1,6 @@
-import { authOptions } from '@/app/(utils)/api/auth/[...nextauth]/route';
 import { getServerSession } from 'next-auth/next';
 import { redirect } from 'next/navigation';
+import { authOptions } from '@/app/(utils)/api/auth/[...nextauth]/route';
 import UserCard from '@/app/(components)/UserCard';
 
 export default async function ProtectedServerPage() {
@@ -11,11 +11,13 @@ export default async function ProtectedServerPage() {
   }
 
   return (
-    <section className='flex flex-col gap-6'>
-      <h1 className='text-center text-3xl font-bold'>
-        This is a server-side protected page.
-      </h1>
-      <UserCard user={session?.user} pagetype={'Server'} />
+    <section className='py-24'>
+      <div className='container'>
+        <h1 className='text-2xl font-bold'>
+          This is a server-side protected page.
+        </h1>
+        <UserCard user={session?.user} pagetype={'Server'} />
+      </div>
     </section>
   );
 }

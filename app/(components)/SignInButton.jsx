@@ -15,14 +15,14 @@ export default function SignInButton() {
         <Menu as='div' className='relative'>
           <Menu.Button>
             {session?.user?.image ? (
-              <div className='relative h-10 w-10 rounded-full border-2'>
+              <div className='relative h-10 w-10'>
                 <Image
                   src={session.user.image}
                   alt={session.user.name || 'Profile Pic'}
                   width={40}
                   height={40}
                   quality={100}
-                  className='inline-block rounded-full'
+                  className='inline-block rounded-full border-2'
                 />
               </div>
             ) : (
@@ -52,8 +52,10 @@ export default function SignInButton() {
                     <Image
                       src={session.user.image}
                       alt={session.user.name}
+                      width={40}
+                      height={40}
+                      quality={100}
                       className='inline-block rounded-full border-2'
-                      fill
                     />
                   </div>
                 ) : (
