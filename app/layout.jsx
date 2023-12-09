@@ -1,7 +1,7 @@
-import { ThemeProvider } from '@/app/(utils)/context/ThemeContext';
-import ClientThemeWrapper from '@/app/(utils)/context/ClientThemeWrapper';
-import AuthProvider from '@/app/(utils)/context/AuthProvider';
-import NavBar from '@/app/(components)//NavBar';
+import AuthProvider from '@/app/context/AuthProvider';
+import { ThemeProvider } from '@/app/context/ThemeContext';
+import ClientThemeWrapper from '@/app/context/ClientThemeWrapper';
+import NavBar from '@/app/components/NavBar';
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
 import 'react-toastify/dist/ReactToastify.css';
@@ -26,14 +26,14 @@ export default async function RootLayout({ children }) {
         />
       </head>
       <body className='flex min-h-full flex-col'>
-        <ThemeProvider>
-          <ClientThemeWrapper>
-            <AuthProvider>
+        <AuthProvider>
+          <ThemeProvider>
+            <ClientThemeWrapper>
               <NavBar />
               <main className='min-h-screen grow'>{children}</main>
-            </AuthProvider>
-          </ClientThemeWrapper>
-        </ThemeProvider>
+            </ClientThemeWrapper>
+          </ThemeProvider>
+        </AuthProvider>
       </body>
     </html>
   );

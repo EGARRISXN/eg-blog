@@ -1,7 +1,7 @@
 'use client';
 import { useContext } from 'react';
-import { ThemeContext } from '@/app/(utils)/context/ThemeContext';
-import { themeIcons } from '@/app/(utils)/constants';
+import { ThemeContext } from '@/app/context/ThemeContext';
+import { themeIcons } from '@/app/constants';
 
 export default function ThemeOptions() {
   const { theme, changeTheme } = useContext(ThemeContext);

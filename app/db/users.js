@@ -1,5 +1,5 @@
 import { ObjectId } from 'mongodb';
-import clientPromise from '@/app/(utils)/db/client';
+import clientPromise from '@/app/db/client';
 
 let client;
 let db;

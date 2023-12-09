@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import User from '@/app/(utils)/db/createUser';
+import User from '@/app/db/createUser';
 import bcrypt from 'bcrypt';
 
 export async function POST(req) {

@@ -4,11 +4,8 @@ import GoogleProvider from 'next-auth/providers/google';
 import TwitterProvider from 'next-auth/providers/twitter';
 import DiscordProvider from 'next-auth/providers/discord';
 import CredentialsProvider from 'next-auth/providers/credentials';
-import User from '@/app/(utils)/db/createUser';
+import User from '@/app/db/createUser';
 import bcrypt from 'bcrypt';
-
-// import { MongoDBAdapter } from '@next-auth/mongodb-adapter';
-// import clientPromise from '@/app/(utils)/db/client';
 
 export const authOptions = {
   providers: [
@@ -140,10 +137,6 @@ export const authOptions = {
       session.user.role = token.role;
       return session;
     },
-    // adapter: MongoDBAdapter(clientPromise),
-    // session: {
-    //   strategy: 'jwt',
-    // },
   },
 };
 

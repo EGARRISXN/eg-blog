@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { navLinks, socialIcons } from '@/app/(utils)/constants';
+import { navLinks, socialIcons } from '@/app/constants';
 import SignInButton from './SignInButton';
 import ThemeOptions from './ThemeOptions';
 

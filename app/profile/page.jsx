@@ -1,8 +1,8 @@
 import { redirect } from 'next/navigation';
 import { getServerSession } from 'next-auth/next';
-import { authOptions } from '@/app/(utils)/api/auth/[...nextauth]/route';
-import UserCard from '@/app/(components)/UserCard';
-import UpdateUserForm from '@/app/(components)/UpdateUserForm';
+import { authOptions } from '@/app/api/auth/[...nextauth]/route';
+import UserCard from '@/app/components/UserCard';
+import UpdateUserForm from '@/app/components/UpdateUserForm';
 
 export default async function Profile() {
   const session = await getServerSession(authOptions);

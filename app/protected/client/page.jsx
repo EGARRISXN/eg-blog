@@ -1,7 +1,7 @@
 'use client';
 import { useSession } from 'next-auth/react';
 import { redirect } from 'next/navigation';
-import UserCard from '@/app/(components)/UserCard';
+import UserCard from '@/app/components/UserCard';
 
 export default function ProtectedClientPage() {
   const { data: session } = useSession({

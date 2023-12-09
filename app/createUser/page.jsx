@@ -1,6 +1,6 @@
 // import { getServerSession } from 'next-auth';
-// import { authOptions } from '@/api/(utils)/auth/[...nextauth]/route';
-import CreateUserForm from '@/app/(components)/CreateUserForm';
+// import { authOptions } from '@/api/auth/[...nextauth]/route';
+import CreateUserForm from '@/app/components/CreateUserForm';
 
 export default async function CreateUser() {
   // const session = await getServerSession(authOptions);
